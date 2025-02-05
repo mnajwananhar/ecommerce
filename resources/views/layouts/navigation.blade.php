@@ -67,7 +67,7 @@
                     <div class="relative" x-data="{ open: false }">
                         <button @click="open = !open" class="flex items-center text-gray-600 hover:text-[#FF9C08]">
                             @if (Auth::user()->profile_photo)
-                                <img src="{{ asset('storage/' . Auth::user()->profile_photo) }}" alt="Profile Photo"
+                                <img src="{{ Storage::url(Auth::user()->profile_photo) }}" alt="Profile Photo"
                                     class="w-8 h-8 rounded-full">
                             @else
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-gray-500" fill="none"
@@ -186,13 +186,39 @@
                     </div>
                 @endauth
                 @guest
-                    <a href="{{ route('login') }}" class="p-2 text-gray-600 hover:text-[#FF9C08]">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                        </svg>
-                    </a>
+                    <div class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" class="p-2 text-gray-600 hover:text-[#FF9C08] flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                            </svg>
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+
+                        <!-- Mobile Dropdown Menu -->
+                        <div x-show="open" @click.away="open = false"
+                            x-transition:enter="transition ease-out duration-200"
+                            x-transition:enter-start="transform opacity-0 scale-95"
+                            x-transition:enter-end="transform opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="transform opacity-100 scale-100"
+                            x-transition:leave-end="transform opacity-0 scale-95"
+                            class="absolute right-0 z-50 mt-2 w-48 bg-white rounded-lg shadow-lg py-1">
+
+                            <a href="{{ route('login') }}"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#FFF5E6]">
+                                {{ __('Login') }}
+                            </a>
+                            <a href="{{ route('register') }}"
+                                class="block px-4 py-2 text-sm font-medium text-[#FF9C08] hover:bg-[#FFF5E6]">
+                                {{ __('Sign Up') }}
+                            </a>
+                        </div>
+                    </div>
                 @endguest
             </div>
 

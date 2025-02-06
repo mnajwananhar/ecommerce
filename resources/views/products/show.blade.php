@@ -250,8 +250,8 @@
                                     <div class="flex items-start gap-4">
                                         <!-- User Avatar -->
                                         <div class="flex-shrink-0">
-                                            @if ($review->user->profile_photo_path)
-                                                <img src="{{ Storage::url($review->user->profile_photo_path) }}"
+                                            @if ($review->user->profile_photo)
+                                                <img src="{{ Storage::url($review->user->profile_photo) }}"
                                                     alt="{{ $review->user->name }}"
                                                     class="w-10 h-10 rounded-full object-cover">
                                             @else
@@ -575,8 +575,8 @@
                                             <div class="flex items-start gap-4">
                                                 <!-- User Avatar -->
                                                 <div class="flex-shrink-0">
-                                                    @if ($review->user->profile_photo_path)
-                                                        <img src="{{ Storage::url($review->user->profile_photo_path) }}"
+                                                    @if ($review->user->profile_photo)
+                                                        <img src="{{ Storage::url($review->user->profile_photo) }}"
                                                             alt="{{ $review->user->name }}"
                                                             class="w-10 h-10 rounded-full object-cover">
                                                     @else
@@ -894,8 +894,8 @@
                                             <div class="flex items-start gap-4">
                                                 <!-- User Avatar -->
                                                 <div class="flex-shrink-0">
-                                                    @if ($review->user->profile_photo_path)
-                                                        <img src="{{ Storage::url($review->user->profile_photo_path) }}"
+                                                    @if ($review->user->profile_photo)
+                                                        <img src="{{ Storage::url($review->user->profile_photo) }}"
                                                             alt="{{ $review->user->name }}"
                                                             class="w-10 h-10 rounded-full object-cover">
                                                     @else

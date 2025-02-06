@@ -218,9 +218,13 @@ class OrderController extends Controller
 
     public function manage()
     {
-        $orders = Order::with('details.product')
+        $sellerId = Auth::id(); // Get the authenticated seller's ID
+        $orders = Order::whereHas('details.product', function ($query) use ($sellerId) {
+            $query->where('seller_id', $sellerId);
+        })->with('details.product')
             ->orderBy('created_at', 'desc')
             ->paginate(5); // Add pagination with 5 items per page
+
         return view('orders.manage', compact('orders'));
     }
 

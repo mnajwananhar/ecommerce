@@ -34,7 +34,7 @@
                             <!-- Product Info -->
                             <div class="p-3 flex flex-col flex-grow">
                                 <!-- Shop Info -->
-                                <div class="flex items-center gap-1 mb-1.5">s
+                                <div class="flex items-center gap-1 mb-1.5">
                                     @if ($product->shop->shop_logo)
                                         <img src="{{ Storage::url($product->shop->shop_logo) }}"
                                             alt="{{ $product->shop->shop_name }}" class="w-4 h-4 rounded-full">

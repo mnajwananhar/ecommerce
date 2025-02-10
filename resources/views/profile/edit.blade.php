@@ -1,3 +1,6 @@
+@php
+    use Illuminate\Support\Facades\Auth;
+@endphp
 <x-app-layout>
     @section('title', 'Edit Profile') <!-- Title halaman Produk -->
 

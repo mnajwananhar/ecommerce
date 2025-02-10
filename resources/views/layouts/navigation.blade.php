@@ -436,7 +436,7 @@
                                 @if (Auth::user()->role === 'customer')
                                     <a href="{{ route('seller-request.create') }}"
                                         class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#FFF5E6]">
-                                        {{ __('Ajukan Menjadi Seller') }}
+                                        {{ __('Apply to be a Seller') }}
                                     </a>
                                 @endif
                                 <a href="{{ route('profile.edit') }}"

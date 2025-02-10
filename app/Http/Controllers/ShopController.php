@@ -112,14 +112,14 @@ class ShopController extends Controller
         $products = Product::where('seller_id', Auth::id())
             ->with(['category', 'images'])
             ->orderBy('created_at', 'desc')
-            ->paginate(12);
+            ->paginate(24);
 
         return view('shops.index', compact('shop', 'products'));
     }
 
     public function show(Shop $shop)
     {
-        $products = $shop->products()->paginate(12);
+        $products = $shop->products()->paginate(24);
         return view('products.shop', compact('shop', 'products'));
     }
 }

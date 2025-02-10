@@ -1,6 +1,6 @@
 <x-app-layout>
 
-    @section('title', 'Category') <!-- Title halaman Produk -->
+    @section('title', 'Category') <!-- Page Title -->
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -8,7 +8,7 @@
             <div class="mb-4">
                 <button onclick="openModal('createModal')"
                     class="bg-[#FF9C08] hover:bg-[#E68A00] text-white font-bold py-2 px-4 rounded">
-                    Tambah Kategori
+                    Add Category
                 </button>
             </div>
 
@@ -20,10 +20,10 @@
                                 <tr>
                                     <th
                                         class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Nama Kategori</th>
+                                        Category Name</th>
                                     <th
                                         class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Aksi</th>
+                                        Actions</th>
                                 </tr>
                             </thead>
 
@@ -74,22 +74,22 @@
     <!-- Modal for Create Category -->
     <div id="createModal" class="fixed inset-0 hidden bg-gray-600 bg-opacity-50 flex items-center justify-center">
         <div class="bg-white p-6 rounded-lg shadow-xl w-96">
-            <h3 class="text-lg font-medium text-gray-900">Tambah Kategori</h3>
+            <h3 class="text-lg font-medium text-gray-900">Add Category</h3>
             <form action="{{ route('categories.store') }}" method="POST">
                 @csrf
                 <div class="mt-4">
-                    <label for="name" class="block text-gray-700 font-bold mb-2">Nama Kategori:</label>
+                    <label for="name" class="block text-gray-700 font-bold mb-2">Category Name:</label>
                     <input type="text" name="name" id="name" value="{{ old('name') }}"
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                 </div>
                 <div class="mt-4 flex justify-end">
                     <button type="button" onclick="closeModal('createModal')"
                         class="mr-3 bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
-                        Batal
+                        Cancel
                     </button>
                     <button type="submit"
                         class="bg-[#FF9C08] hover:bg-[#E68A00] text-white font-bold py-2 px-4 rounded">
-                        Simpan
+                        Save
                     </button>
                 </div>
             </form>
@@ -99,23 +99,23 @@
     <!-- Modal for Edit Category -->
     <div id="editModal" class="fixed inset-0 hidden bg-gray-600 bg-opacity-50 flex items-center justify-center">
         <div class="bg-white p-6 rounded-lg shadow-xl w-96">
-            <h3 class="text-lg font-medium text-gray-900">Edit Kategori</h3>
+            <h3 class="text-lg font-medium text-gray-900">Edit Category</h3>
             <form id="editForm" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="mt-4">
-                    <label for="editName" class="block text-gray-700 font-bold mb-2">Nama Kategori:</label>
+                    <label for="editName" class="block text-gray-700 font-bold mb-2">Category Name:</label>
                     <input type="text" name="name" id="editName" value=""
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                 </div>
                 <div class="mt-4 flex justify-end">
                     <button type="button" onclick="closeModal('editModal')"
                         class="mr-3 bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
-                        Batal
+                        Cancel
                     </button>
                     <button type="submit"
                         class="bg-[#FF9C08] hover:bg-[#E68A00] text-white font-bold py-2 px-4 rounded">
-                        Simpan Perubahan
+                        Save Changes
                     </button>
                 </div>
             </form>

@@ -1,5 +1,7 @@
 @php
     use Illuminate\Support\Facades\Auth;
+    use Illuminate\Support\Facades\Storage;
+
 @endphp
 <x-app-layout>
     @section('title', 'Edit Profile') <!-- Title halaman Produk -->
@@ -12,7 +14,7 @@
                 <div class="max-w-xl">
                     <!-- Display Current Profile Photo -->
                     <div class="mb-4">
-                        <img src="{{ Auth::user()->profile_photo }}" alt="{{ Auth::user()->name }}"
+                        <img src="{{ Storage::url(Auth::user()->profile_photo) }}" alt="{{ Auth::user()->name }}"
                             class="rounded-full h-20 w-20 object-cover">
                     </div>
                     <form method="POST" action="{{ route('profile.photo.update') }}" enctype="multipart/form-data">

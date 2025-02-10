@@ -154,29 +154,16 @@
 
                 <!-- Back Button -->
                 <div class="flex justify-start">
-                    @if (auth()->user()->role === 'seller')
-                        <a href="{{ route('orders.manage') }}"
-                            class="inline-flex items-center px-6 py-3 bg-[#FF9C08] text-white text-sm font-medium rounded-lg
-                                 hover:bg-[#e68a00] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF9C08]
-                                 transition-colors duration-200">
-                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                            </svg>
-                            Back to Order List
-                        </a>
-                    @else
-                        <a href="{{ route('orders.history') }}"
-                            class="inline-flex items-center px-6 py-3 bg-[#FF9C08] text-white text-sm font-medium rounded-lg
-                                 hover:bg-[#e68a00] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF9C08]
-                                 transition-colors duration-200">
-                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                            </svg>
-                            Back to Order History
-                        </a>
-                    @endif
+                    <a href="{{ url()->previous() }}"
+                        class="inline-flex items-center px-6 py-3 bg-[#FF9C08] text-white text-sm font-medium rounded-lg
+                             hover:bg-[#e68a00] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF9C08]
+                             transition-colors duration-200">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                        </svg>
+                        Back
+                    </a>
                 </div>
             </div>
         </div>

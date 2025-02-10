@@ -44,32 +44,87 @@
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white">
-        <div class="max-w-[95vw] sm:max-w-[90vw] mx-auto py-6 sm:py-8 px-2 sm:px-4 lg:px-6">
-            <div class="grid gap-8 sm:grid-cols-3">
+        <div class="max-w-[95vw] sm:max-w-[90vw] mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <!-- Footer Content -->
+            <div class="grid gap-8 sm:grid-cols-3 lg:grid-cols-4">
+                <!-- Kolom 1: About Platform -->
                 <div>
-
-
-                </div>
-                <div class="sm:text-center">
-                    <h4 class="text-lg font-semibold">Follow Us</h4>
-                    <div class="mt-2 flex sm:justify-center space-x-4">
-                        <a href="#" class="hover:underline">
+                    <h4 class="text-lg font-semibold mb-4">About Our Marketplace</h4>
+                    <p class="text-gray-400 text-sm">
+                        Welcome to our public e-commerce platform! A place where buyers and sellers come together to
+                        trade high-quality products. Join us today and start shopping or selling!
+                    </p>
+                    <div class="mt-4 flex space-x-6">
+                        <a href="#" class="hover:text-white transition-colors duration-300">
                             <img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" alt="Facebook"
                                 class="h-6 w-6">
                         </a>
-                        <a href="#" class="hover:underline">
+                        <a href="#" class="hover:text-white transition-colors duration-300">
                             <img src="https://img.icons8.com/ios-filled/50/ffffff/twitter.png" alt="Twitter"
                                 class="h-6 w-6">
                         </a>
-                        <a href="#" class="hover:underline">
+                        <a href="#" class="hover:text-white transition-colors duration-300">
                             <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram"
                                 class="h-6 w-6">
                         </a>
                     </div>
                 </div>
+
+                <!-- Kolom 2: For Buyers -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">For Buyers</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">How to Shop</a>
+                        </li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Payment
+                                Methods</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Shipping &
+                                Delivery</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Return Policy</a>
+                        </li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">FAQs for
+                                Buyers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kolom 3: For Sellers -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">For Sellers</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">How to Sell</a>
+                        </li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Seller
+                                Registration</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Selling Fees</a>
+                        </li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Seller
+                                Dashboard</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">FAQs for
+                                Sellers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kolom 4: Legal & Support -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal & Support</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Terms of
+                                Service</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Privacy Policy</a>
+                        </li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Security
+                                Information</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Contact
+                                Support</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Report a
+                                Problem</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="mt-8 border-t border-gray-700 pt-4 text-center text-sm text-gray-400">
-                &copy; {{ date('Y') }} E-Commerce All rights reserved.
+
+            <!-- Copyright Section -->
+            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-sm text-gray-400">
+                &copy; {{ date('Y') }} Public E-Commerce Marketplace. All rights reserved.
             </div>
         </div>
     </footer>

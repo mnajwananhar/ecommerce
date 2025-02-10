@@ -54,7 +54,7 @@ class ProductController extends Controller
 
         // Tetap pertahankan paginasi
         $categories = Category::all();
-        $products = $query->paginate(12);
+        $products = $query->paginate(24);
 
         return view('products.index', compact('products', 'categories'));
     }
@@ -86,7 +86,7 @@ class ProductController extends Controller
     //     }
 
     //     $manage->delete();
-    //     return redirect()->route('products.manage.index')->with('status', 'Produk berhasil dihapus sementara.');
+    //     return redirect()->route('products.manage.index')->with('status', 'Product successfully temporarily deleted.');
     // }
 
 
@@ -109,7 +109,7 @@ class ProductController extends Controller
         }
 
         $manage->delete();
-        return redirect()->route('products.manage.index')->with('status', 'Produk berhasil dihapus sementara.');
+        return redirect()->route('products.manage.index')->with('status', 'Product successfully temporarily deleted.');
     }
 
     public function restore($id)
@@ -121,7 +121,7 @@ class ProductController extends Controller
         }
 
         $product->restore();
-        return redirect()->route('products.manage.index')->with('status', 'Produk berhasil dipulihkan.');
+        return redirect()->route('products.manage.index')->with('status', 'Product successfully restored.');
     }
 
     public function forceDelete($id)
@@ -139,7 +139,7 @@ class ProductController extends Controller
         }
 
         $product->forceDelete();
-        return redirect()->route('products.manage.index')->with('status', 'Produk berhasil dihapus permanen.');
+        return redirect()->route('products.manage.index')->with('status', 'Product successfully permanently deleted.');
     }
 
 
@@ -192,7 +192,7 @@ class ProductController extends Controller
             }
         }
 
-        return redirect()->route('products.manage.index')->with('status', 'Produk berhasil diperbarui.');
+        return redirect()->route('products.manage.index')->with('status', 'Product successfully updated.');
     }
 
     public function create()
@@ -233,7 +233,7 @@ class ProductController extends Controller
             }
         }
 
-        return redirect()->route('products.manage.index')->with('status', 'Produk berhasil ditambahkan.');
+        return redirect()->route('products.manage.index')->with('status', 'Product successfully added.');
     }
 
     public function show($id)
@@ -291,7 +291,7 @@ class ProductController extends Controller
 
         // Tetap pertahankan paginasi
         $categories = Category::all();
-        $products = $query->paginate(12);
+        $products = $query->paginate(24);
 
         return view('welcome', compact('products', 'categories'));
     }
